@@ -27,19 +27,18 @@ function entregarDinero(){
         resultado.innerHTML = "Soy un cajero pobre y no tengo dinero";
     }else {
         for(let e of entregados) {
+            resultado.innerHTML = "Usted retiro:" + "<br>"
             if(e.cantidad > 0 && e.valor == 50){
                 // resultado.innerHTML += e.cantidad + " billetes de $" + e.valor + " <br>";
-                resultado.innerHTML += e.cantidad + " billete de" ;
+                
                 for(let i = 0; i < e.cantidad; i++) {
                     billeteCajero50()
                 }
             }else if (e.cantidad > 0 && e.valor == 20){
-                resultado.innerHTML += e.cantidad + " billete de" ;
                 for(let i = 0; i < e.cantidad; i++) {
                     billeteCajero20()
                 }
-            }else if(e.cantidad > 0 && e.valor == 10){
-                resultado.innerHTML += e.cantidad + " billete de" ;
+            }else if(e.cantidad > 0 && e.valor == 10){            
                 for(let i = 0; i < e.cantidad; i++) {
                     billeteCajero10()
                 }
@@ -52,7 +51,6 @@ function entregarDinero(){
 function billeteCajero50(){
     let imagen = document.createElement("img");
     imagen.src = "./50.PNG"
-    
     let contenedor = document.getElementById("contenedor");
     contenedor.appendChild(imagen);
 }
@@ -60,7 +58,6 @@ function billeteCajero50(){
 function billeteCajero20(){
     let imagen = document.createElement("img");
     imagen.src = "./20.PNG"
-    
     let contenedor = document.getElementById("contenedor");
     contenedor.appendChild(imagen);
 }
@@ -68,7 +65,6 @@ function billeteCajero20(){
 function billeteCajero10(){
     let imagen = document.createElement("img");
     imagen.src = "./10.PNG"
-    
     let contenedor = document.getElementById("contenedor");
     contenedor.appendChild(imagen);
 }
